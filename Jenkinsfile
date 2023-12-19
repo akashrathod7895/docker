@@ -20,7 +20,9 @@ pipeline {
         
         stage ("copy-file") {
             steps {
-                sh "cp /root/.jenkins/workspace/project/index.html /usr/local/apache2/htdocs"
+                sh "docker exec -it 7f97e58cb15c bash"
+                sh "cd htdocs"
+                sh "cp /root/.jenkins/workspace/project/index.html ."
                 
             }
             
