@@ -26,9 +26,11 @@ pipeline {
         
         stage ("copy-file") {
             steps {
-                sh "docker exec -it 7f97e58cb15c bash"
-                sh "cd htdocs"
-                sh "cp /root/.jenkins/workspace/project/index.html ."
+               script {
+            // Copy files into the container without using interactive mode
+            sh 'docker exec 7f97e58cb15c cp /root/.jenkins/workspace/project/index.html  /usr/local/apache2/htdocs'
+        }
+        
                 
             }
             
