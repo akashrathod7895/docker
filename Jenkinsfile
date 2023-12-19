@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
             // Run Docker container with a different host port
-            sh 'docker run -itdp 8080:80 httpd'
+            sh 'docker run -itdp 8001:80 httpd'
         }
                 
             }
