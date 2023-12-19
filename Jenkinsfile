@@ -4,7 +4,13 @@ pipeline {
     stages {
         stage ("clone-repo") {
             steps {
-                sh "git clone https://github.com/akashrathod7895/docker.git"
+                script {
+            // Remove existing 'docker' directory if it exists
+            deleteDir()
+
+            // Clone the repository into a new 'docker' directory
+            git url: 'https://github.com/akashrathod7895/docker.git', branch: 'master', dir: 'docker'
+        }
                 
             }
             
