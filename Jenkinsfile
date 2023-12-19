@@ -18,7 +18,7 @@ pipeline {
         }
         stage ("docker") {
             steps {
-                sh "docker run -itdp 80:80 httpd"
+                sh "docker run -itdp 90:80 httpd"
                 
             }
             
