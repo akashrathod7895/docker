@@ -18,7 +18,10 @@ pipeline {
         }
         stage ("docker") {
             steps {
-                sh "docker run -itdp 90:80 httpd"
+                script {
+            // Run Docker container with a different host port
+            sh 'docker run -itdp 8080:80 httpd'
+        }
                 
             }
             
