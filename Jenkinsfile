@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ("docker") {
             steps {
-                sh "docker run -itdp 8080:80 --name akash httpd bash"
+                sh "docker run -itdp 90:80 --name akash httpd bash"
                 
             }
             
