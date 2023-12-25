@@ -3,17 +3,22 @@ pipeline {
     stages {
         stage ("docker") {
             steps {
-                sh "docker run -itdp 8001:80 --name arti3 httpd bash"
+                sh "docker run -itdp 80:80 --name container1 httpd bash"
                 
             }
             
         }
         stage ("copyfile") {
             steps {
-                sh 'docker exec arti3 cp /root/.jenkins/workspace/project/index.html  /usr/local/apache2/htdocs/'
+                sh 'docker cp /root/.jenkins/workspace/project/index.html  container1:/usr/local/apache2/htdocs/'
                 
             }
             
+        }
+        stage ("deleteworkspace") {
+            steps {
+                sh "rm -rf /root/.jenkins/workspace/project"
+            }
         }
         
     }
