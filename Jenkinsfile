@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ("docker") {
             steps {
-                sh "docker run -it -dp 80:80 --name container1 httpd bash"
+                sh "docker run -it -dp 90:80 --name container1 httpd bash"
                 
             }
             
