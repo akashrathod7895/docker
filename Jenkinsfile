@@ -17,7 +17,7 @@ pipeline {
         }
         stage ("deleteworkspace") {
             steps {
-                sh "rm -rf /root/.jenkins/workspace/project"
+                sh "rm -rf /root/.jenkins/workspace"
             }
         }
         
