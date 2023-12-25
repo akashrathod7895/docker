@@ -10,7 +10,7 @@ pipeline {
         }
         stage ("copyfile") {
             steps {
-                sh 'docker cp /root/.jenkins/workspace/project/index.html  container1:/var/www/html'
+                sh 'docker cp /root/.jenkins/workspace/project/index.html  container1:/usr/local/apache2/htdocs'
                 
             }
             
